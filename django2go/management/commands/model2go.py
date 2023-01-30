@@ -10,7 +10,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for app_name in options['app_name']:
             try:
-                open("%s.go"%app_name, 'w').write(model2go(app_name).encode("utf8"))
+                # open("%s.go"%app_name, 'w').write(model2go(app_name).encode("utf8"))
+                open("%s.go"%app_name, 'w').write(model2go(app_name))
             except:
                 raise
                 raise CommandError('App "%s" does not exist' % app_name)
